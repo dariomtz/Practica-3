@@ -5,17 +5,20 @@
 //////////////////////////////////////////////////////////////////////////////////
 module counter(
         input clk,
-        output reg out
+        output out
     );
+	 
+	 reg num = 0;
 
     always @ (posedge clk)
     begin
-        if (out == 9) begin
-            out <= 0;
+        if (num == 9) begin
+            num <= 0;
         end
         else begin
-            out <= out + 1;
+            num <= num + 1;
         end
     end
+	 assign out = num;
                       
 endmodule

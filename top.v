@@ -8,7 +8,7 @@ module top(
         output [6:0] disp
     );
 
-    reg num;
+    wire num;
 
     counter c(.clk(clk), .out(num));
 
