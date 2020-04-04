@@ -5,10 +5,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 module counter(
         input clk,
-        output out
+        output [3:0] out
     );
 	 
-	 reg num = 0;
+	 reg [3:0] num;
 
     always @ (posedge clk)
     begin

@@ -8,7 +8,7 @@ module top(
         output [6:0] disp
     );
 
-    wire num;
+    wire [3:0] num;
 
     counter c(.clk(clk), .out(num));
 
