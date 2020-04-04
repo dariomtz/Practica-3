@@ -10,7 +10,7 @@ module mux(
         input [6:0] d3,
         input [6:0] d4,
         output [3:0] pos,
-        output [6:0] dout,
+        output [6:0] dout
     );
 	
     reg [19 : 0] counter;

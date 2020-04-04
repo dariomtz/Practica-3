@@ -9,7 +9,7 @@ module tensCounter(
         output [3:0] out
     );
 	
-    reg [3 : 0] counter
+    reg [3 : 0] counter;
 	reg [3:0] num;
 
     always @ (posedge clk, posedge reset) begin

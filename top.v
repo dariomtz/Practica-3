@@ -8,7 +8,7 @@ module top(
         input reset,
         input enable,
         output [6:0] disp,
-        output [3:0] mux,
+        output [3:0] mux
     );
 
     wire [3:0] tenthsSec;
@@ -28,9 +28,9 @@ module top(
     wire [6:0] displayMins;
 
     display d1(.n(tenthsSec),   .d(displayTenths));
-    display d1(.n(unitsSec),    .d(displayUnits));
-    display d1(.n(tensSec),     .d(displayTens));
-    display d1(.n(min),         .d(displayMins));
+    display d2(.n(unitsSec),    .d(displayUnits));
+    display d3(.n(tensSec),     .d(displayTens));
+    display d4(.n(min),         .d(displayMins));
 
     mux m(.clk(clk), .dout(disp), .pos(mux),
                     .d1(displayTenths),
@@ -38,7 +38,5 @@ module top(
                     .d3(displayTens), 
                     .d4(displayMins)
                     );
-
-    display d(.n(num), .d(disp));
                       
 endmodule
