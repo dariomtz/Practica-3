@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module counter(
         input clk,
-        output out
+        output reg out
     );
 
     always @ (posedge clk)
