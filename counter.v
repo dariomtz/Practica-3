@@ -3,15 +3,19 @@
 // Company: ITESO 
 // Engineer:  dariomtz
 //////////////////////////////////////////////////////////////////////////////////
-module top(
+module counter(
         input clk,
-        output [6:0] disp
+        output out;
     );
 
-    reg num;
-
-    counter c(.clk(clk), .num(num));
-
-    display d(.n(num), .d(disp));
+    always @ (posedge clk)
+    begin
+        if (out == 9) begin
+            out <= 0;
+        end
+        else begin
+            out <= out + 1;
+        end
+    end
                       
 endmodule
