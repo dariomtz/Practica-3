@@ -10,7 +10,7 @@ module top(
 
     reg num;
 
-    counter c(.clk(clk), .num(num));
+    counter c(.clk(clk), .out(num));
 
     display d(.n(num), .d(disp));
                       
