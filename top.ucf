@@ -1,0 +1,12 @@
+NET "num[0]" LOC = "P11";
+NET "num[1]" LOC = "L3";
+NET "num[2]" LOC = "K3";
+NET "num[3]" LOC = "B4";
+
+NET "disp[0]" LOC = "L14";
+NET "disp[1]" LOC = "H12";
+NET "disp[2]" LOC = "N14";
+NET "disp[3]" LOC = "N11";
+NET "disp[4]" LOC = "P12";
+NET "disp[5]" LOC = "L13";
+NET "disp[6]" LOC = "M12";
