@@ -12,12 +12,16 @@ module tenthsCounter(
 	
     reg [22 : 0] counter;
 	reg [3:0] num;
-    reg play = 1;
+    reg play;
 
     always @ (posedge clk, posedge reset, posedge enable) begin
 
         if (enable) begin
-            play <= ~play;
+            if (play == 0) begin
+                play <= 1;
+            end else begin
+                play <= 0;
+            end
         end
 
         if (reset) begin
@@ -27,8 +31,7 @@ module tenthsCounter(
         end else begin
 
             if (play) begin
-                counter <= counter + 1;
-
+                
                 if (counter == 5_000_000) begin
                     counter <= 0;
 
@@ -39,6 +42,8 @@ module tenthsCounter(
                         num <= num + 1;
                     end
 
+                end else begin
+                    counter <= counter + 1;
                 end
 
             end
