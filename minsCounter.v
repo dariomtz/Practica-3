@@ -12,16 +12,15 @@ module minsCounter(
     reg [2 : 0] counter;
 	reg [3:0] num;
 
-    always @ (posedge clk, posedge reset) begin
+    always @ (posedge clk or posedge reset) begin
 
         if (reset) begin
             counter <= 0;
             num <= 0;
 
         end else begin
-            counter <= counter + 1;
 
-            if (counter == 6) begin
+            if (counter == 10) begin
                 counter <= 0;
 
                 if (num == 9) begin
@@ -31,6 +30,8 @@ module minsCounter(
                     num <= num + 1;
                 end
 
+            end else begin
+                counter <= counter + 1;
             end
 
         end
