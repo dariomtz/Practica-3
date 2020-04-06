@@ -17,8 +17,8 @@ module top(
     wire [3:0] min;
 
     //module        input                   output               reset          enable
-    tenthsCounter    a(.clk(clk),           .out(tenthsCouter), .reset(reset),  .enable(enable));
-    unitsCounter     b(.clk(tenthsCouter),  .out(unitsSec),     .reset(reset));
+    tenthsCounter    a(.clk(clk),           .out(tenthsSec), .reset(reset),  .enable(enable));
+    unitsCounter     b(.clk(tenthsSec),       .out(unitsSec),     .reset(reset));
     tensCounter      c(.clk(unitsSec),      .out(tensSec),      .reset(reset));
     minsCounter      d(.clk(tensSec),       .out(min),          .reset(reset));
 
