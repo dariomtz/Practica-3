@@ -13,15 +13,21 @@ module mux(
         output [6:0] dout
     );
 	
+    reg [19:0] c;
     reg [2:0] counter;
 
     always @ (posedge clk) begin
 
-        case (counter)
-            3: counter <= 0;
-            default: counter <= counter + 1;
-        endcase
-
+        if (c == 833333) begin
+            case (counter)
+                3: counter <= 0;
+                default: counter <= counter + 1;
+            endcase
+            
+        end else begin
+            c <= c + 1;
+        end
+        
     end
 	
     assign pos =    (counter == 0) ? 4'b1110:

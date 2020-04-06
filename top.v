@@ -9,15 +9,20 @@ module top(
         output [3:0] mux
     );
 
-    wire num;
+    wire [3:0] decisecond;
+    wire [3:0] second;
+    wire [3:0] tenseconds;
+    wire [3:0] hundredseconds;
 
-    counter c(.clk(clk), .out(num));
+    tenthsCounter c1(.clk(clk), .out(decisecond));
+    tenthsCounter c2(.clk(decisecond[0]), .out(second));
+    tenthsCounter c3(.clk(second[0]), .out(tenseconds));
+    tenthsCounter c4(.clk(tenseconds[0]), .out(hundredseconds));
 
     mux m(.clk(clk), .dout(disp), .pos(mux),
-                    .n1(num),
-                    .n2(12), 
-                    .n3(11), 
-                    .n4(10)
-                    );
+                    .n1(decisecond),
+                    .n2(second), 
+                    .n3(tenseconds), 
+                    .n4(hundredseconds));
                       
 endmodule
