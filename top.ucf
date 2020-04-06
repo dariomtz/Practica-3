@@ -3,6 +3,16 @@
 #NET "enable" LOC = "P11";
 NET "clk" LOC = "B8";
 
+NET "n1[0]" LOC = "P11";
+NET "n1[1]" LOC = "L3";
+NET "n1[2]" LOC = "K3";
+NET "n1[3]" LOC = "B4";
+
+NET "n2[0]" LOC = "G3";
+NET "n2[1]" LOC = "F3";
+NET "n2[2]" LOC = "E2";
+NET "n2[3]" LOC = "N3";
+
 #outputs
 NET "disp[0]" LOC = "L14";
 NET "disp[1]" LOC = "H12";
