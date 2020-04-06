@@ -16,11 +16,11 @@ module top(
     wire [3:0] tensSec;
     wire [3:0] min;
 
-    //module        input                   output
-    tenthsCouter    a(.clk(clk),            .out(tenthsCouter), .reset(reset), .enable(enable));
-    unitsCouter     b(.clk(tenthsCouter),   .out(unitsSec),     .reset(reset));
-    tensCouter      c(.clk(unitsSec),       .out(tensSec),      .reset(reset));
-    minsCouter      d(.clk(tensSec),        .out(min),          .reset(reset));
+    //module        input                   output               reset          enable
+    tenthsCounter    a(.clk(clk),           .out(tenthsCouter), .reset(reset),  .enable(enable));
+    unitsCounter     b(.clk(tenthsCouter),  .out(unitsSec),     .reset(reset));
+    tensCounter      c(.clk(unitsSec),      .out(tensSec),      .reset(reset));
+    minsCounter      d(.clk(tensSec),       .out(min),          .reset(reset));
 
     wire [6:0] displayTenths;
     wire [6:0] displayUnits;
