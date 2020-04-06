@@ -8,7 +8,7 @@ module top(
         input reset,
         input enable,
         output [6:0] disp,
-        output [1:0] mux,
+        output [3:0] mux,
     );
 
     wire [3:0] tenthsSec;
