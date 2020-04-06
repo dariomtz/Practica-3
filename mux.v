@@ -17,7 +17,7 @@ module mux(
 
     always @ (posedge clk) begin
 
-        case (mux)
+        case (counter)
             3: counter <= 0;
             default: counter <= counter + 1;
         endcase
