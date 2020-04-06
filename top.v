@@ -11,10 +11,14 @@ module top(
         output [3:0] mux
     );
 
+<<<<<<< HEAD
     wire [3:0] tenthsSec;
     wire [3:0] unitsSec;
     wire [3:0] tensSec;
     wire [3:0] min;
+=======
+    wire num;
+>>>>>>> parent of de70ff4... corrections
 
     //module        input                   output               reset          enable
     tenthsCounter    a(.clk(clk),           .out(tenthsSec), .reset(reset),  .enable(enable));
