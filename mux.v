@@ -5,10 +5,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 module mux(
         input clk, 
-        input [6:0] d1,
-        input [6:0] d2,
-        input [6:0] d3,
-        input [6:0] d4,
+        input [3:0] n1,
+        input [3:0] n2,
+        input [3:0] n3,
+        input [3:0] n4,
         output [3:0] pos,
         output [6:0] dout
     );
@@ -29,9 +29,11 @@ module mux(
                     (counter == 2) ? 4'b1011:
                                      4'b0111;
 
-    assign dout =   (counter == 0) ? d1 : 
-                    (counter == 1) ? d2 :
-                    (counter == 2) ? d3 :
-                                     d4 ;   
-                      
+    wire currentNum;
+    assign currentNum = (counter == 0) ? n1 : 
+                        (counter == 1) ? n2 :
+                        (counter == 2) ? n3 :
+                                         n4 ;
+    
+    display d(.n(currentNum), .d(dout));
 endmodule
