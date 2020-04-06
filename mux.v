@@ -13,25 +13,25 @@ module mux(
         output [6:0] dout
     );
 	
-    reg [3:0] mux;
+    reg [2:0] counter;
 
     always @ (posedge clk) begin
 
         case (mux)
-            4'b1110: mux <= 4'b1101;
-            4'b1101: mux <= 4'b1011;
-            4'b1011: mux <= 4'b0111;
-            4'b0111: mux <= 4'b1110;
-            default: mux <= 4'b0000;
+            3: counter <= 0;
+            default: counter <= counter + 1;
         endcase
 
     end
 	
-    assign pos = mux;
+    assign pos =    (counter == 0) ? 4'b1110:
+                    (counter == 1) ? 4'b1101:
+                    (counter == 2) ? 4'b1011:
+                                     4'b0111;
 
-    assign dout =   (mux == 4'b1110) ? d1 :
-                    (mux == 4'b1101) ? d2 : 
-                    (mux == 4'b1011) ? d3 :
-                                       d4 ;
+    assign dout =   (counter == 0) ? d1 : 
+                    (counter == 1) ? d2 :
+                    (counter == 2) ? d3 :
+                                     d4 ;   
                       
 endmodule
