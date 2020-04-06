@@ -15,9 +15,9 @@ module top(
 
     mux m(.clk(clk), .dout(disp), .pos(mux),
                     .n1(num),
-                    .n2(0), 
-                    .n3(0), 
-                    .n4(0)
+                    .n2(12), 
+                    .n3(11), 
+                    .n4(10)
                     );
                       
 endmodule
