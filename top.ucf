@@ -1,6 +1,6 @@
 #inputs
-NET "reset" LOC = "G12";
-NET "enable" LOC = "P11";
+#NET "reset" LOC = "G12";
+#NET "enable" LOC = "P11";
 
 #outputs
 NET "disp[0]" LOC = "L14";
