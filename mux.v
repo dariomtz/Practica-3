@@ -19,15 +19,12 @@ module mux(
     always @ (posedge clk) begin
 
         if (c == 50_000_000) begin
-            case (counter)
-                3: counter <= 0;
-                default: counter <= counter + 1;
-            endcase
-            
+            c <= 0;    
+            counter <= counter + 1;
         end else begin
             c <= c + 1;
         end
-        
+           
     end
 	
     assign pos =    (counter == 0) ? 4'b1110:
@@ -35,7 +32,7 @@ module mux(
                     (counter == 2) ? 4'b1011:
                                      4'b0111;
 
-    wire [6:0] currentDisplay;
+    wire [3:0] currentNum;
 	 
     assign currentNum = (counter == 0) ? n1 : 
                         (counter == 1) ? n2 :
