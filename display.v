@@ -8,22 +8,17 @@ module display(
         output [6:0] d
     );
 
-    assign d = (n == 0) ? 7'b1000000 :
-                (n == 1) ? 7'b1111001 :
-                (n == 2) ? 7'b0100100 :
-                (n == 3) ? 7'b0110000 :
-                (n == 4) ? 7'b0011001 :
-                (n == 5) ? 7'b0010010 :
-                (n == 6) ? 7'b0000010 :
-                (n == 7) ? 7'b1111000 :
-                (n == 9) ? 7'b0010000 :
-                (n == 10) ? 7'b0001000 :
-                (n == 11) ? 7'b0000011 :
-                (n == 12) ? 7'b1000110 :
-                (n == 13) ? 7'b0100001 :
-                (n == 14) ? 7'b0000110 :
-                (n == 15) ? 7'b0001110 :
-                            7'b0000000;
+    wire w = n[0];
+    wire x = n[1];
+    wire y = n[2];
+    wire z = n[3];
 
+    assign d[0] = ~z & ~x & (y ^ w) | z & w & (y ^x);
+    assign d[1] = y & (z & (x | ~w) | ~z & (x ^ y)) | z & ~y & x & w;
+    assign d[2] = z & y & (x | ~w) | ~(z | y | ~x | w);
+    assign d[3] = ~z & ~x & (y ^ w) | x & (y & w | z & ~y & ~w);
+    assign d[4] = ~z & w | ~x (~z & y & ~w | z & ~y & w);
+    assign d[5] = ~z & ~y & (x | w) | y & w & (z ^ x);
+    assign d[6] = ~(z | y | x) | y & (~z & x & w | z & ~x & ~w);
                       
 endmodule

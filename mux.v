@@ -34,10 +34,7 @@ module mux(
                     (counter == 1) ? 4'b1101:
                     (counter == 2) ? 4'b1011:
                                      4'b0111;
-	 display d1();
-	 display d2();
-	 display d3();
-	 display d4();
+
     wire [6:0] currentDisplay;
 	 
     assign currentNum = (counter == 0) ? n1 : 
