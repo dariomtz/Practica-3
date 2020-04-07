@@ -18,7 +18,7 @@ module mux(
 
     always @ (posedge clk) begin
 
-        if (c == 833333) begin
+        if (c == 200000) begin
             c <= 0;    
             counter <= counter + 1;
         end else begin
