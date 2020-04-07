@@ -41,5 +41,5 @@ module mux(
                         (counter == 2) ? n3 :
                                          n4 ;
     
-    display d(.n(currentNum), .d(dout));
+    display d(.n(currentNum[3:0]), .d(dout[6:0]));
 endmodule

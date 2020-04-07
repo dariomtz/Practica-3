@@ -22,9 +22,9 @@ module top(
     //tenthsCounter c4(.clk(tenseconds[0]), .out(hundredseconds));
 
     mux m(.clk(clk), .dout(disp), .pos(mux),
-                    .n1(n1),
-                    .n2(n1), 
-                    .n3(n2), 
-                    .n4(n2));
+                    .n1(n1[3:0]),
+                    .n2(n1[3:0]), 
+                    .n3(n2[3:0]), 
+                    .n4(n2[3:0]));
                       
 endmodule
