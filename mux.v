@@ -13,12 +13,12 @@ module mux(
         output [6:0] dout
     );
 	
-    reg [19:0] c;
-    reg [2:0] counter;
+    reg [26:0] c;
+    reg [1:0] counter;
 
     always @ (posedge clk) begin
 
-        if (c == 833333) begin
+        if (c == 50_000_000) begin
             case (counter)
                 3: counter <= 0;
                 default: counter <= counter + 1;
@@ -34,8 +34,12 @@ module mux(
                     (counter == 1) ? 4'b1101:
                     (counter == 2) ? 4'b1011:
                                      4'b0111;
-
-    wire [3:0] currentNum;
+	 display d1();
+	 display d2();
+	 display d3();
+	 display d4();
+    wire [6:0] currentDisplay;
+	 
     assign currentNum = (counter == 0) ? n1 : 
                         (counter == 1) ? n2 :
                         (counter == 2) ? n3 :
