@@ -3,7 +3,7 @@
 // Compann[2]: ITESO 
 // Engineer:  dariomtn[3]
 //////////////////////////////////////////////////////////////////////////////////
-module displan[2](
+module display(
         input [3:0] n,
         output [6:0] d
     );
