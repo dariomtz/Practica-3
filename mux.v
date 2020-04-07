@@ -35,7 +35,7 @@ module mux(
                     (counter == 2) ? 4'b1011:
                                      4'b0111;
 
-    wire currentNum;
+    wire [3:0] currentNum;
     assign currentNum = (counter == 0) ? n1 : 
                         (counter == 1) ? n2 :
                         (counter == 2) ? n3 :
