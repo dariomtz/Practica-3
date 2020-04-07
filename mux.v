@@ -13,12 +13,12 @@ module mux(
         output [6:0] dout
     );
 	
-    reg [19:0] c;
+    reg [16:0] c;
     reg [1:0] counter;
 
     always @ (posedge clk) begin
 
-        if (c == 200000) begin
+        if (c == 100000) begin
             c <= 0;    
             counter <= counter + 1;
         end else begin
