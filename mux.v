@@ -16,7 +16,7 @@ module mux(
     reg [16:0] c;
     reg [1:0] counter;
 
-    always @ (posedge clk) begin
+    always @ (posedge clk or negedge clk) begin
 
         if (c == 100000) begin
             c <= 0;    
