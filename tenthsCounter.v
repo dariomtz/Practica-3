@@ -12,7 +12,7 @@ module tenthsCounter(
     reg [22 : 0] counter;
 	reg [3:0] num;
 
-    always @ (posedge clk or posedge reset) begin
+    always @ (posedge clk, posedge reset) begin
 
         if (reset) begin
             counter <= 0;
