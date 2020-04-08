@@ -29,6 +29,6 @@ module top(
                     .n3(tenseconds), 
                     .n4(hundredseconds));
     
-    assign dots = (mux == 4'b1011 | mux == 4'b1101) ? 0 : 1;
+    assign dots = (mux == 4'b0111 | mux == 4'b1101) ? 0 : 1;
                       
 endmodule
