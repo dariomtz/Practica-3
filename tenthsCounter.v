@@ -8,11 +8,11 @@ module tenthsCounter(
         input reset,
         output [3:0] out
     );
-	
+
     reg [22 : 0] counter;
 	reg [3:0] num;
 
-    always @ (posedge clk, posedge reset) begin
+    always @ (posedge clk or negedge reset) begin
 
         if (reset) begin
             counter <= 0;

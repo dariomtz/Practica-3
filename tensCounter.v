@@ -9,10 +9,11 @@ module tensCounter(
         output [3:0] out
     );
 	
+    wire nclk = ~clk;
     reg [3 : 0] counter;
 	reg [3:0] num;
 
-    always @ (posedge clk, negedge clk, posedge reset) begin
+    always @ (posedge clk or posedge nclk or negedge reset) begin
 
         if (reset) begin
             counter <= 0;
