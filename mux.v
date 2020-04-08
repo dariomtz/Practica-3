@@ -16,9 +16,9 @@ module mux(
     reg [16:0] c;
     reg [1:0] counter;
 
-    always @ (posedge clk or negedge clk) begin
+    always @ (posedge clk) begin
 
-        if (c == 100000) begin
+        if (c == 50000) begin
             c <= 0;    
             counter <= counter + 1;
         end else begin
@@ -34,10 +34,10 @@ module mux(
 
     wire [3:0] currentNum;
 	 
-    assign currentNum = (counter == 0) ? n1 : 
-                        (counter == 1) ? n2 :
-                        (counter == 2) ? n3 :
-                                         n4 ;
+    assign currentNum = (counter == 0) ? n4 : 
+                        (counter == 1) ? n3 :
+                        (counter == 2) ? n2 :
+                                         n1 ;
     
     display d(.n(currentNum[3:0]), .d(dout[6:0]));
 endmodule

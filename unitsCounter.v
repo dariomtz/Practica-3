@@ -23,12 +23,10 @@ module unitsCounter(
             if (counter == 10) begin
                 counter <= 0;
 
-                if (num == 9) begin
-                    num <= 0;
-
-                end else begin
-                    num <= num + 1;
-                end
+                case (num)
+                    9: num <= 0; 
+                    default: num <= num + 1;
+                endcase
 
             end else begin
                 counter <= counter + 1;
