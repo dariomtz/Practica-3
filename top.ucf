@@ -1,6 +1,6 @@
 #inputs
-NET "reset" LOC = "G12";
-#NET "enable" LOC = "P11";
+NET "reset" LOC = "C11";
+NET "pp" LOC = "G12";
 NET "clk" LOC = "B8";
 
 #outputs
@@ -11,6 +11,7 @@ NET "disp[3]" LOC = "N11";
 NET "disp[4]" LOC = "P12";
 NET "disp[5]" LOC = "L13";
 NET "disp[6]" LOC = "M12";
+NET "dots" LOC = "N13";
 
 NET mux[0] LOC = "K14";
 NET mux[1] LOC = "M13";

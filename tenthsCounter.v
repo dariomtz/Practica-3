@@ -6,10 +6,12 @@
 module tenthsCounter(
         input clk,
         input reset,
+        input pp,
         output reg [3:0] out
     );
 
     reg [22 : 0] counter;
+    reg play;
 
     always @ (posedge clk or posedge reset) begin
 
@@ -33,6 +35,10 @@ module tenthsCounter(
 
         end
             
+    end
+
+    always @ (posedge pp) begin
+        play <= play + 1;
     end
                       
 endmodule
