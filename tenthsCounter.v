@@ -20,19 +20,24 @@ module tenthsCounter(
             out <= 0;
 
         end else begin
-            counter <= counter + 1;
-            if (counter == 5_000_000) begin
-                counter <= 0;
-                
-                if (out == 9) begin
-                    out <= 0;
 
-                end else begin
-                    out <= out + 1;
+            if (play) begin
+                counter <= counter + 1;
+
+                if (counter == 5_000_000) begin
+                    counter <= 0;
+                    
+                    if (out == 9) begin
+                        out <= 0;
+
+                    end else begin
+                        out <= out + 1;
+                    end
+
                 end
 
             end
-
+            
         end
             
     end
