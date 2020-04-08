@@ -21,7 +21,7 @@ module tensCounter(
         end else begin
             counter <= counter + 1;
 
-            if (counter == 5) begin
+            if (counter == 4) begin
                 counter <= 0;
 
                 if (num == 5) begin

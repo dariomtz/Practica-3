@@ -20,7 +20,7 @@ module minsCounter(
 
         end else begin
             counter <= counter + 1;
-            if (counter == 3) begin
+            if (counter == 2) begin
                 counter <= 0;
 
                 if (num == 9) begin
