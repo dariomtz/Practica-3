@@ -34,10 +34,10 @@ module mux(
 
     wire [3:0] currentNum;
 	 
-    assign currentNum = (counter == 0) ? n4 : 
-                        (counter == 1) ? n3 :
-                        (counter == 2) ? n2 :
-                                         n1 ;
+    assign currentNum = (counter == 0) ? n1 : 
+                        (counter == 1) ? n2 :
+                        (counter == 2) ? n3 :
+                                         n4 ;
     
     display d(.n(currentNum[3:0]), .d(dout[6:0]));
 endmodule

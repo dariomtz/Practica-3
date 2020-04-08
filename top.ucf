@@ -14,7 +14,7 @@ NET "disp[5]" LOC = "L13";
 NET "disp[6]" LOC = "M12";
 NET "dots" LOC = "N13";
 
-NET mux[0] LOC = "K14";
-NET mux[1] LOC = "M13";
-NET mux[2] LOC = "J12";
-NET mux[3] LOC = "F12";
+NET mux[0] LOC = "F12";
+NET mux[1] LOC = "J12";
+NET mux[2] LOC = "M13";
+NET mux[3] LOC = "K14";
