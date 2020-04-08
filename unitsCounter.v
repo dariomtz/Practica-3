@@ -9,11 +9,10 @@ module unitsCounter(
         output [3:0] out
     );
 	
-    wire nclk = ~clk;
     reg [3 : 0] counter;
 	reg [3:0] num;
 
-    always @ (posedge clk or posedge nclk or negedge reset) begin
+    always @ (posedge clk or negedge reset) begin
 
         if (reset) begin
             counter <= 0;
@@ -21,7 +20,7 @@ module unitsCounter(
 
         end else begin
 
-            if (counter == 10) begin
+            if (counter == 5) begin
                 counter <= 0;
 
                 case (num)

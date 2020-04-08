@@ -6,38 +6,33 @@
 module tenthsCounter(
         input clk,
         input reset,
-        output [3:0] out
+        output reg [3:0] out
     );
 
     reg [22 : 0] counter;
-	reg [3:0] num;
 
     always @ (posedge clk or negedge reset) begin
 
         if (reset) begin
             counter <= 0;
-            num <= 0;
+            out <= 0;
 
         end else begin
-        
-            if (counter == 4_999_999) begin
+            counter <= counter + 1;
+            if (counter == 2_500_000) begin
                 counter <= 0;
-
-                if (num == 9) begin
-                    num <= 0;
+                
+                if (out == 9) begin
+                    out <= 0;
 
                 end else begin
-                    num <= num + 1;
+                    out <= out + 1;
                 end
 
-            end else begin
-                counter <= counter + 1;
             end
 
         end
             
     end
-	
-    assign out = num;
                       
 endmodule
