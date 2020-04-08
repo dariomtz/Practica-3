@@ -1,5 +1,5 @@
 #inputs
-#NET "reset" LOC = "G12";
+NET "reset" LOC = "G12";
 #NET "enable" LOC = "P11";
 NET "clk" LOC = "B8";
 
