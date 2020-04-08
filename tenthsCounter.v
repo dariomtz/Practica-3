@@ -13,37 +13,40 @@ module tenthsCounter(
     reg [22 : 0] counter;
     reg play;
 
-    always @ (posedge clk or posedge reset) begin
+    always @ (posedge clk or posedge reset or posedge pp) begin
 
-        if (reset) begin
-            counter <= 0;
-            out <= 0;
-
+        if (pp) begin
+            play <= play + 1;
+            
         end else begin
 
-            if (play) begin
-                counter <= counter + 1;
+            if (reset) begin
+                counter <= 0;
+                out <= 0;
 
-                if (counter == 5_000_000) begin
-                    counter <= 0;
-                    
-                    if (out == 9) begin
-                        out <= 0;
+            end else begin
 
-                    end else begin
-                        out <= out + 1;
+                if (play) begin
+                    counter <= counter + 1;
+
+                    if (counter == 5_000_000) begin
+                        counter <= 0;
+                        
+                        if (out == 9) begin
+                            out <= 0;
+
+                        end else begin
+                            out <= out + 1;
+                        end
+
                     end
 
                 end
-
+                
             end
-            
+
         end
             
-    end
-
-    always @ (posedge pp) begin
-        play <= play + 1;
     end
                       
 endmodule
