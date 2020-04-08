@@ -19,7 +19,7 @@ module tenthsCounter(
 
         end else begin
             counter <= counter + 1;
-            if (counter == 2_500_000) begin
+            if (counter == 5_000_000) begin
                 counter <= 0;
                 
                 if (out == 9) begin

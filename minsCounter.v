@@ -12,7 +12,7 @@ module minsCounter(
     reg [2 : 0] counter;
 	reg [3:0] num;
 
-    always @ (posedge clk or posedge reset) begin
+    always @ (negedge clk or posedge reset) begin
 
         if (reset) begin
             counter <= 0;
