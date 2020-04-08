@@ -19,7 +19,7 @@ module minsCounter(
             num <= 0;
 
         end else begin
-
+            counter <= counter + 1;
             if (counter == 3) begin
                 counter <= 0;
 
@@ -30,8 +30,6 @@ module minsCounter(
                     num <= num + 1;
                 end
 
-            end else begin
-                counter <= counter + 1;
             end
 
         end

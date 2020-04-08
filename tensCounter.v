@@ -19,6 +19,7 @@ module tensCounter(
             num <= 0;
 
         end else begin
+            counter <= counter + 1;
 
             if (counter == 5) begin
                 counter <= 0;
@@ -30,8 +31,6 @@ module tensCounter(
                     num <= num + 1;
                 end
 
-            end else begin
-                counter <= counter + 1;
             end
 
         end

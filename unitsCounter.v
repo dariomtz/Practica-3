@@ -19,7 +19,7 @@ module unitsCounter(
             num <= 0;
 
         end else begin
-
+            counter <= counter + 1;
             if (counter == 5) begin
                 counter <= 0;
 
@@ -28,8 +28,6 @@ module unitsCounter(
                     default: num <= num + 1;
                 endcase
 
-            end else begin
-                counter <= counter + 1;
             end
 
         end
